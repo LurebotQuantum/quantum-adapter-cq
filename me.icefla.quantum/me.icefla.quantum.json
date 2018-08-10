@@ -1,0 +1,126 @@
+{
+  "ret": 1,
+  "apiver": 9,
+  "name": "Quantum Adapter",
+  "version": "0.1.0",
+  "version_id": 1,
+  "author": "Esphas",
+  "description": "Quantum Adapter",
+  "event": [
+    {
+      "id": 1,
+      "type": 21,
+      "name": "Private Messages",
+      "function": "_eventPrivateMsg",
+      "priority": 30000
+    },
+    {
+      "id": 2,
+      "type": 2,
+      "name": "Group Messages",
+      "function": "_eventGroupMsg",
+      "priority": 30000
+    },
+    {
+      "id": 3,
+      "type": 4,
+      "name": "Discuss Messages",
+      "function": "_eventDiscussMsg",
+      "priority": 30000
+    },
+    {
+      "id": 5,
+      "type": 101,
+      "name": "Group Admins",
+      "function": "_eventSystem_GroupAdmin",
+      "priority": 30000
+    },
+    {
+      "id": 6,
+      "type": 102,
+      "name": "Group Member Decreased",
+      "function": "_eventSystem_GroupMemberDecrease",
+      "priority": 30000
+    },
+    {
+      "id": 7,
+      "type": 103,
+      "name": "Group Member Increased",
+      "function": "_eventSystem_GroupMemberIncrease",
+      "priority": 30000
+    },
+    {
+      "id": 10,
+      "type": 201,
+      "name": "Friend Added",
+      "function": "_eventFriend_Add",
+      "priority": 30000
+    },
+    {
+      "id": 8,
+      "type": 301,
+      "name": "Friend Add Request",
+      "function": "_eventRequest_AddFriend",
+      "priority": 30000
+    },
+    {
+      "id": 9,
+      "type": 302,
+      "name": "Group Add Request",
+      "function": "_eventRequest_AddGroup",
+      "priority": 30000
+    },
+    {
+      "id": 1001,
+      "type": 1001,
+      "name": "CQ Startup",
+      "priority": 30000,
+      "function": "_eventStartup"
+    },
+    {
+      "id": 1002,
+      "type": 1002,
+      "name": "CQ Exit",
+      "priority": 30000,
+      "function": "_eventExit"
+    },
+    {
+      "id": 1003,
+      "type": 1003,
+      "name": "App Enable",
+      "priority": 30000,
+      "function": "_eventEnable"
+    },
+    {
+      "id": 1004,
+      "type": 1004,
+      "name": "App Disable",
+      "priority": 30000,
+      "function": "_eventDisable"
+    }
+  ],
+  "menu": [
+  ],
+  "status": [
+  ],
+  "auth": [
+    101,
+    103,
+    106,
+    110,
+    121,
+    123,
+    124,
+    125,
+    126,
+    128,
+    130,
+    131,
+    140,
+    150,
+    151,
+    160,
+    161,
+    180
+  ]
+}

@@ -7,7 +7,10 @@
 
 #include <string>
 
+#include "message.h"
 #include "cqdefines.h"
+
+namespace adapter {
 
 class App {
 
@@ -15,6 +18,8 @@ class App {
 	bool enabled = false;
 
 public:
+
+	// CQ Events
 
 	int Initialize(int authcode);
 
@@ -38,6 +43,8 @@ public:
 	int OnFriendRequest  (int sendTime, CQ_QQ qq, std::string message, CQ_RESPONSE_FLAG flag);
 	int OnGroupRequest   (int sendTime, CQ_QQ qq, CQ_GROUP group, std::string message, CQ_RESPONSE_FLAG flag);
 	int OnGroupInvitation(int sendTime, CQ_QQ qq, CQ_GROUP group, std::string message, CQ_RESPONSE_FLAG flag);
+
+	// CQ APIs
 
 	int CQSendPrivateMessage(CQ_QQ qq, std::string message);
 	int CQSendGroupMessage  (CQ_GROUP group, std::string message);
@@ -73,4 +80,10 @@ public:
 
 	int CQLog(int level, std::string category, std::string content);
 	int CQSetFatal(std::string message);
+
+	//
+
+	void ProcessMessage(Message message);
 };
+
+}

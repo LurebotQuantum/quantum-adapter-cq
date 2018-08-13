@@ -7,13 +7,13 @@
 
 #include "app.h"
 
-App *app = nullptr;
+adapter::App *app = nullptr;
 
 CQEVT(const char*, AppInfo, 0)() {
 		return "9" "," "me.icefla.quantum";
 }
 CQEVT(int32_t, Initialize, 4)(int32_t AuthCode) {
-	app = new App;
+	app = new adapter::App;
 	return app->Initialize(AuthCode);
 }
 

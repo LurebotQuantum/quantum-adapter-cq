@@ -4,8 +4,9 @@
  */
 
 #include "app.h"
-
 #include "cqapi.h"
+
+namespace adapter {
 
 int App::Initialize(int authcode) {
 	this->authcode = authcode;
@@ -32,16 +33,25 @@ int App::Disable() {
 
 // type: indicates the source of the message
 // 11/friend; 1/online status; 2/group; 3/discuss
-int App::OnPrivateMessage(int msgId, int type, CQ_QQ qq, std::string message) {
-	this->CQSendPrivateMessage(qq, message); // Echo bot
+int App::OnPrivateMessage(int msgId, int type, CQ_QQ qq, std::string msg) {
+	this->CQSendPrivateMessage(qq, msg); // DEBUG: Echo bot
+	Message message(msgId, msg);
+	message.SetupPrivate(qq, type);
+	this->ProcessMessage(message);
 	return EVENT_IGNORE;
 }
 
 int App::OnGroupMessage(int msgId, CQ_GROUP group, CQ_QQ qq, std::string msg, CQ_ANONYMOUS anonymous) {
+	Message message(msgId, msg);
+	message.SetupGroup(qq, group, anonymous);
+	this->ProcessMessage(message);
 	return EVENT_IGNORE;
 }
 
 int App::OnDiscussMessage(int msgId, CQ_DISCUSS discuss, CQ_QQ qq, std::string msg) {
+	Message message(msgId, msg);
+	message.SetupDiscuss(qq, discuss);
+	this->ProcessMessage(message);
 	return EVENT_IGNORE;
 }
 
@@ -183,4 +193,10 @@ int App::CQLog(int level, std::string category, std::string content) {
 
 int App::CQSetFatal(std::string message) {
 	return CQ_setFatal(this->authcode, message.c_str());
+}
+
+void App::ProcessMessage(Message message) {
+	// TODO
+}
+
 }

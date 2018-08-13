@@ -9,94 +9,94 @@
   "event": [
     {
       "id": 1,
-      "type": 21,
-      "name": "Private Messages",
-      "function": "_eventPrivateMsg",
-      "priority": 30000
+      "type": 1001,
+      "name": "Startup",
+      "priority": 30000,
+      "function": "CQStartup"
     },
     {
       "id": 2,
-      "type": 2,
-      "name": "Group Messages",
-      "function": "_eventGroupMsg",
-      "priority": 30000
+      "type": 1002,
+      "name": "Exit",
+      "priority": 30000,
+      "function": "CQExit"
     },
     {
       "id": 3,
-      "type": 4,
-      "name": "Discuss Messages",
-      "function": "_eventDiscussMsg",
-      "priority": 30000
-    },
-    {
-      "id": 5,
-      "type": 101,
-      "name": "Group Admins",
-      "function": "_eventSystem_GroupAdmin",
-      "priority": 30000
-    },
-    {
-      "id": 6,
-      "type": 102,
-      "name": "Group Member Decreased",
-      "function": "_eventSystem_GroupMemberDecrease",
-      "priority": 30000
-    },
-    {
-      "id": 7,
-      "type": 103,
-      "name": "Group Member Increased",
-      "function": "_eventSystem_GroupMemberIncrease",
-      "priority": 30000
-    },
-    {
-      "id": 10,
-      "type": 201,
-      "name": "Friend Added",
-      "function": "_eventFriend_Add",
-      "priority": 30000
-    },
-    {
-      "id": 8,
-      "type": 301,
-      "name": "Friend Add Request",
-      "function": "_eventRequest_AddFriend",
-      "priority": 30000
-    },
-    {
-      "id": 9,
-      "type": 302,
-      "name": "Group Add Request",
-      "function": "_eventRequest_AddGroup",
-      "priority": 30000
-    },
-    {
-      "id": 1001,
-      "type": 1001,
-      "name": "CQ Startup",
-      "priority": 30000,
-      "function": "_eventStartup"
-    },
-    {
-      "id": 1002,
-      "type": 1002,
-      "name": "CQ Exit",
-      "priority": 30000,
-      "function": "_eventExit"
-    },
-    {
-      "id": 1003,
       "type": 1003,
       "name": "App Enable",
       "priority": 30000,
-      "function": "_eventEnable"
+      "function": "CQEnable"
     },
     {
-      "id": 1004,
+      "id": 4,
       "type": 1004,
       "name": "App Disable",
       "priority": 30000,
-      "function": "_eventDisable"
+      "function": "CQDisable"
+    },
+    {
+      "id": 11,
+      "type": 21,
+      "name": "Private Message",
+      "function": "CQPrivateMessage",
+      "priority": 30000
+    },
+    {
+      "id": 12,
+      "type": 2,
+      "name": "Group Message",
+      "function": "CQGroupMessage",
+      "priority": 30000
+    },
+    {
+      "id": 13,
+      "type": 4,
+      "name": "Discuss Message",
+      "function": "CQDiscussMessage",
+      "priority": 30000
+    },
+    {
+      "id": 21,
+      "type": 101,
+      "name": "Group Admin Changed",
+      "function": "CQGroupAdminChange",
+      "priority": 30000
+    },
+    {
+      "id": 22,
+      "type": 102,
+      "name": "Group Member Decreased",
+      "function": "CQGroupMemberDecrease",
+      "priority": 30000
+    },
+    {
+      "id": 23,
+      "type": 103,
+      "name": "Group Member Increased",
+      "function": "CQGroupMemberIncrease",
+      "priority": 30000
+    },
+    {
+      "id": 31,
+      "type": 201,
+      "name": "Friend Added",
+      "function": "CQFriendAdd",
+      "priority": 30000
+    },
+    {
+      "id": 32,
+      "type": 301,
+      "name": "Friend Add Request",
+      "function": "CQFriendAddRequest",
+      "priority": 30000
+    },
+    {
+      "id": 33,
+      "type": 302,
+      "name": "Group Add Request",
+      "function": "CQGroupAddRequest",
+      "priority": 30000
     }
   ],
   "menu": [
@@ -104,23 +104,10 @@
   "status": [
   ],
   "auth": [
-    101,
-    103,
-    106,
-    110,
-    121,
-    123,
-    124,
-    125,
-    126,
-    128,
-    130,
-    131,
-    140,
-    150,
-    151,
-    160,
-    161,
+    101, 103, 106,
+    120, 121, 122, 123, 124, 125, 126, 128,
+    130, 131,
+    150, 151,
     180
   ]
 }

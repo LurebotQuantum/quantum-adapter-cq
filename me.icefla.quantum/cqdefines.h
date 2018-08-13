@@ -5,21 +5,17 @@
 
 #pragma once
 
-#include <cstdint>
-
-typedef int32_t CQ_BOOL;
+typedef long long CQ_QQ;
+typedef long long CQ_GROUP;
+typedef long long CQ_DISCUSS;
 typedef const char *CQ_RESPONSE_FLAG;
 typedef const char *CQ_ANONYMOUS;
 
-#define CQAPIVER 9
-#define CQAPIVERTEXT "9"
-
-#define CQAPI(ReturnType) \
-extern "C" __declspec(dllimport) ReturnType __stdcall
-
-#define CQEVENT(ReturnType, Name, Size) \
-__pragma(comment(linker, "/EXPORT:" #Name "=_" #Name "@" #Size)) \
-extern "C" __declspec(dllexport) ReturnType __stdcall Name
+#define CQAPI(RET, NAME) \
+extern "C" __declspec(dllimport) RET __stdcall NAME
+#define CQEVT(RET, NAME, SIZE) \
+__pragma(comment(linker, "/EXPORT:" #NAME "=_" #NAME "@" #SIZE)) \
+extern "C" __declspec(dllexport) RET __stdcall NAME
 
 #define EVENT_IGNORE 0
 #define EVENT_BLOCK 1

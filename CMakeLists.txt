@@ -1,10 +1,14 @@
 ﻿
+# project infomation
 cmake_minimum_required(VERSION 3.8)
 project(quantum-adapter-cq)
 
-set(PROTOS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/protos/src)
+# variables
+set(DIST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dist)
+message(STATUS "Dist Directory = " ${DIST_DIR})
 
-find_package(Protobuf REQUIRED)
+#
+include_directories(include)
 
-add_subdirectory(src/protos)
+# the source
 add_subdirectory(src)

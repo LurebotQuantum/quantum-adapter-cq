@@ -33,7 +33,7 @@ CQEVT(int32_t, CQDisable, 0)() {
 }
 
 CQEVT(int32_t, CQPrivateMessage, 24)(int32_t subType, int32_t msgId, int64_t fromQQ, const char *msg, int32_t font) {
-	return app->OnPrivateMessage(msgId, subType, fromQQ, msg);
+	return app->OnPrivateMessage(msgId, fromQQ, msg);
 }
 CQEVT(int32_t, CQGroupMessage, 36)(int32_t subType, int32_t msgId, int64_t fromGroup, int64_t fromQQ, const char *fromAnonymous, const char *msg, int32_t font) {
 	return app->OnGroupMessage(msgId, fromGroup, fromQQ, msg, fromAnonymous);

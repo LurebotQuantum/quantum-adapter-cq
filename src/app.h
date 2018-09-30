@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "message.h"
+#include "cqupdate.h"
 #include "cqdefines.h"
 
 namespace adapter {
@@ -28,7 +28,7 @@ public:
 	int Enable();
 	int Disable();
 
-	int OnPrivateMessage(int msgId, int type, CQ_QQ qq, std::string msg);
+	int OnPrivateMessage(int msgId, CQ_QQ qq, std::string msg);
 	int OnGroupMessage  (int msgId, CQ_GROUP group, CQ_QQ qq, std::string msg, CQ_ANONYMOUS anonymous);
 	int OnDiscussMessage(int msgId, CQ_DISCUSS discuss, CQ_QQ qq, std::string msg);
 	
@@ -83,7 +83,8 @@ public:
 
 	//
 
-	void ProcessMessage(Message message);
+
+
 };
 
-}
+} // namespace adapter
